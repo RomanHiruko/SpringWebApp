@@ -4,7 +4,12 @@ public class MusicPlayer {
     private Music music;
     private String name;
     private int volume;
-
+    public void doMyInit(){
+        System.out.println("Class MusicPlayer created");
+    }
+    public void doMyDestroy(){
+        System.out.println("Class MusicPlayer destroyed");
+    }
     public String getName() {
         return name;
     }
