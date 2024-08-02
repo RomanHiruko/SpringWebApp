@@ -1,7 +1,13 @@
 package org.example;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
 @Component
+@Scope("singleton")
 public class ClassicalMusic implements Music {
     private ClassicalMusic() {
     }
@@ -11,10 +17,12 @@ public class ClassicalMusic implements Music {
         return new ClassicalMusic();
     }
 
+    @PostConstruct
     public void doMyInit() {
         System.out.println("Class ClassicalMusic created");
     }
 
+    @PreDestroy
     public void doMyDestroy() {
         System.out.println("Class ClassicalMusic destroyed");
     }
