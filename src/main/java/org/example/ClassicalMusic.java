@@ -6,11 +6,7 @@ import javax.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope("singleton")
 public class ClassicalMusic implements Music {
-    private ClassicalMusic() {
-    }
 
     public static ClassicalMusic getClassicalMusic() {
         System.out.println("Factory method called ALARMMMMMMMMMMMMMMMMMMM");

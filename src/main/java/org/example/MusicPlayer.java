@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
@@ -34,7 +36,16 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
-    @Autowired
+
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Class MusicPlayer created");
+    }
+
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Class MusicPlayer destroyed");
+    }
     public MusicPlayer(@Qualifier("rockMusic") Music music1,
                        @Qualifier("classicalMusic") Music music2) {
         this.music1 = music1;
