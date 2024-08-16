@@ -11,8 +11,8 @@ pipeline {
                     // Выводим креденшалы в консоль
                     // Внимание: Никогда не выводите реальные креденшалы в реальном проекте!
                     // Это только для демонстрационных целей.
-                    println("Username: ${creds.username}")
-                    println("Password: ${creds.password}")
+                    println("Username: ${creds.Username}")
+                    println("Password: ${creds.Password}")
                 }
             }
         }
