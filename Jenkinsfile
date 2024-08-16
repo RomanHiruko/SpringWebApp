@@ -2,11 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Calculate 2 + 2') {
+        stage('Print Credentials') {
             steps {
                 script {
-                    int result = 2 + 2
-                    println("The result of 2 + 2 is: ${result}")
+                    // Получаем креденшалы, сохраненные в Jenkins под идентификатором 'my-credentials-id'
+                    def creds = credentials('my-credentials-id')
+
+                    // Выводим креденшалы в консоль
+                    // Внимание: Никогда не выводите реальные креденшалы в реальном проекте!
+                    // Это только для демонстрационных целей.
+                    println("Username: ${creds.username}")
+                    println("Password: ${creds.password}")
                 }
             }
         }
